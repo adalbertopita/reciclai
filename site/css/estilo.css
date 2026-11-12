@@ -609,6 +609,12 @@ hr {
   font-size: 0.9375rem;
   color: var(--texto-credito);
 }
+.credito a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 500;
+}
 
 /* ---------- tablet ---------- */
 @media (min-width: 768px) {
