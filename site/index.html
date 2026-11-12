@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reciclaí – dias da coleta de lixo pelo CEP</title>
+<meta name="description" content="Digite o CEP da sua casa e veja o dia e o horário da coleta de lixo comum e reciclável na cidade de São Paulo.">
+<meta name="theme-color" content="#72975A">
+<link rel="icon" type="image/png" href="img/logo-simbolo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-voltar" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-reciclar" viewBox="0 0 24 24"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></symbol>
+  <symbol id="i-lixo" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></symbol>
+  <symbol id="i-externo" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-copiar" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<div class="faixa faixa--topo" aria-hidden="true"></div>
+
+<header class="hero" id="hero">
+  <img class="hero__logo" src="img/logo-reciclai.png" alt="Reciclaí" width="128" height="128">
+  <img class="hero__cidade" src="img/skyline-sp.webp" alt="" width="1368" height="574" fetchpriority="high">
+</header>
+
+<header class="topbar" id="topbar" hidden>
+  <div class="topbar__in">
+    <a class="topbar__voltar" href="./">
+      <svg class="icone" width="22" height="22" aria-hidden="true"><use href="#i-voltar"/></svg>
+      nova consulta
+    </a>
+    <a class="topbar__simbolo" href="./"><img src="img/logo-simbolo.png" alt="Reciclaí – início" width="61" height="44"></a>
+  </div>
+</header>
+
+<main id="tela">
+  <div class="conteudo conteudo--home">
+    <h1 class="titulo-home" tabindex="-1">Digite o CEP da sua casa.<br>Mostraremos o dia e o horário da coleta.</h1>
+
+    <form class="form" id="form-cep" action="./" method="get" novalidate>
+      <label for="cep" class="sr-only">CEP da sua casa</label>
+      <div class="form__linha">
+        <input class="input" id="cep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" aria-describedby="cep-ajuda">
+        <div id="cep-erro" hidden></div>
+        <p class="ajuda" id="cep-ajuda">Não sabe o CEP? Ele aparece na conta de luz ou de água.</p>
+        <button class="btn" type="submit" id="btn-cep">ver dias da coleta</button>
+      </div>
+    </form>
+
+    <hr>
+
+    <p class="nota">Vale para endereços da cidade de São Paulo.<br>Não guardamos nenhuma das informações coletadas.</p>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="rodape__in">
+    <nav class="rodape__links" aria-label="Mais informações">
+      <a href="dicas.html">O que pode ir para a reciclagem?</a>
+      <a href="tel:156">Dúvidas e Reclamações: ligue 156</a>
+    </nav>
+    <p class="credito">feito por @adalbertopita</p>
+  </div>
+</footer>
+
+<div class="faixa faixa--base" aria-hidden="true"></div>
+</body>
+</html>

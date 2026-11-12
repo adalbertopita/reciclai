@@ -17,7 +17,7 @@ Tudo estático. Sem backend, sem banco e sem consulta às concessionárias na ho
 - [x] 2. Adaptadores com testes de fixture (11/11/2026): `coleta/fontes/{loga,ecourbis,reciclasampa}.ts`, 36 testes
 - [x] 3. Varredura de amostra (Bela Vista/Loga, Santo Amaro/Ecourbis) e conferência manual (11/11/2026). Ver "Amostra" abaixo. **Decisões pendentes antes da etapa 4.**
 - [x] 4. Varredura completa + validação (12/11/2026). Ver "Resultado da varredura" abaixo
-- [ ] 5. Site
+- [x] 5. Site (12/11/2026): `site/index.html`, `site/dicas.html`, `site/css/estilo.css`, `site/js/app.js`. Ver "Site" abaixo
 - [ ] 6. Teste de ponta a ponta no celular
 - [ ] 7. Publicação + link do QR Code
 
@@ -224,6 +224,34 @@ caffeinate -i -s -m sh -c 'npm run -s varredura -- --area=cidade --raio=2000 --n
 
 ### Para o site
 - ⚠️ Quando as opções de um CEP forem de **empresas diferentes** (ex.: `04514000`, Rua Graúna: Loga no começo, Ecourbis no resto), os nomes das ruas são quase iguais ("Rua Grauna" × "Rua Graúna"). O rótulo da opção precisa mostrar a empresa e "depende do trecho", não só a rua.
+
+## Site (etapa 5, 12/11/2026)
+
+- JS puro (ES2017, `<script defer>`), sem build. Uma página (`index.html`) troca de tela em JS, e `dicas.html` é estática. Ícones Lucide num sprite SVG inline (`<use href="#i-...">`).
+- **Fluxo** (`app.js`, `consultar`):
+  1. Valida 8 dígitos (no envio).
+  2. Fora das faixas da capital: tela "fora de SP", com a cidade pelo ViaCEP.
+  3. Busca `dados/cep/<prefixo>.json`, o ViaCEP e `meta.json` em paralelo, com teto de 8 s.
+  4. CEP na base: resultado. ViaCEP diz que o CEP não existe: erro na home.
+  5. Sem dado: empresa pelo bairro do ViaCEP (`bairros.json`), ou pela maioria do prefixo, ou as duas. Mostra os 3 passos (copiar CEP, abrir site, colar).
+  6. Passou de 8 s ou sem rede: a mesma tela, com "não conseguimos trazer o horário agora".
+- **CEP com mais de uma opção:**
+  - Ruas diferentes: "Qual é a sua rua?".
+  - Mesma rua: "Depende do trecho da rua" + "trecho 1/2". A comparação ignora acento ("Rua Grauna" = "Rua Graúna").
+  - Empresas diferentes: cada opção diz "coleta feita pela X", e aparecem os dois links.
+- **Desvio do DESIGN.md:**
+  - Tela 6.3 (número da casa): não temos faixa de número, então virou a tela de opções acima (decisão 2).
+  - Card do Ecoponto mais perto: não temos coordenadas, então virou o botão "ver Ecopontos no mapa" (Google Maps, **sem** o CEP na URL).
+- URL com `?cep=` (pushState + popstate). O CEP só vai para o ViaCEP. Sem cookie, localStorage nem analytics.
+- Peso da 1ª visita (gzip): HTML 2 KB + CSS 3 KB + JS 6,5 KB + logo 20 KB + cidade 63 KB ≈ **95 KB**, sem a fonte. Cada consulta baixa ~0,5 KB.
+- Testado no browser (375, 320 e 1280 px):
+  - todas as telas;
+  - máscara e envio pelo teclado;
+  - voltar do navegador;
+  - foco no h1;
+  - sem rolagem horizontal em 320 px;
+  - alvos de toque ≥ 44 px.
+- ⚠️ **Servir localmente:** o preview do app desktop não lê o disco externo (permissão do macOS). Suba o servidor pelo terminal (`cd site && python3 -m http.server 8080`). O `.claude/launch.json` só aponta para `http://localhost:8080`.
 
 ## Código da coleta (etapa 2)
 
