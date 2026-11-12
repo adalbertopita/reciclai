@@ -1,0 +1,28 @@
+{
+  "atualizadoEm": "2026-11-12",
+  "mesAno": "11/2026",
+  "areas": [
+    "cidade-grossa",
+    "cidade-loga-densa"
+  ],
+  "links": {
+    "Loga": "https://www.loga.com.br/pesquisa-de-coleta/",
+    "Ecourbis": "https://www.ecourbis.com.br/coleta/index.html"
+  },
+  "totais": {
+    "trechos": {
+      "Loga": 26062,
+      "Ecourbis": 94763
+    },
+    "ceps": 44637,
+    "cepsComOpcoes": 6107,
+    "cepsPorEmpresa": {
+      "Loga": 19071,
+      "Ecourbis": 25855
+    },
+    "cepsNasDuasEmpresas": 289,
+    "setores": 23668,
+    "prefixos": 3168,
+    "bairros": 211
+  }
+}

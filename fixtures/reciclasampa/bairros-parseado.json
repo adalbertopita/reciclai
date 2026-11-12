@@ -1,0 +1,1087 @@
+[
+ {
+  "bairro": "Coleta de lixo na pandemia",
+  "slug": "aclimacao",
+  "empresa": "?<= URL ?>/artigo/coleta-de-lixo-durante-a-pandemia"
+ },
+ {
+  "bairro": "AEROPORTO",
+  "slug": "aeroporto",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ÁGUA BRANCA",
+  "slug": "agua_branca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ÁGUA FRIA",
+  "slug": "agua_fria",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ÁGUA FUNDA",
+  "slug": "agua_funda",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ÁGUA RASA",
+  "slug": "agua_rasa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ALTO DA BOA VISTA",
+  "slug": "alto_da_boa",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ALTO DA LAPA",
+  "slug": "alto_da_lapa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ALTO DA MOÓCA",
+  "slug": "alto_da_mooca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ALTO DE PINHEIROS",
+  "slug": "alto_de_pinheiros",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ANA ROSA",
+  "slug": "ana_rosa",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "AMERICANÓPOLIS",
+  "slug": "americanopolis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ANÁLIA FRANCO",
+  "slug": "analia_franco",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ANHANGUERA",
+  "slug": "anhanguera",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ARICANDUVA",
+  "slug": "aricanduva",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ARTUR ALVIM",
+  "slug": "artur_alvim_ecourbis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ARTUR ALVIM",
+  "slug": "artur_alvim_loga",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BARRA FUNDA",
+  "slug": "barra_funda",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BARRO BRANCO",
+  "slug": "barro_branco",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BELA VISTA",
+  "slug": "bela_vista",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BELÉM",
+  "slug": "belem",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BELENZINHO",
+  "slug": "belenzinho",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BOM RETIRO",
+  "slug": "bom_retiro",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BRASILÂNDIA",
+  "slug": "brasilandia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BRÁS",
+  "slug": "bras",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BROOKLIN PAULISTA",
+  "slug": "brooklin_paulista_loga",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "BROOKLIN PAULISTA",
+  "slug": "brooklin_paulista_ecourbis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "BROOKLIN NOVO",
+  "slug": "brooklin_novo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "BUTANTÃ",
+  "slug": "butanta",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CACHOEIRINHA",
+  "slug": "cachoeirinha",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CAMBUCI",
+  "slug": "cambuci",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CAMPO BELO",
+  "slug": "campo_belo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CAMPO GRANDE",
+  "slug": "campo_grande",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CAMPO LIMPO",
+  "slug": "campo_limpo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CANGAÍBA",
+  "slug": "cangaiba",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CANINDÉ",
+  "slug": "caninde",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CAPÃO REDONDO",
+  "slug": "capao_redondo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CAPELA SOCORRO",
+  "slug": "capela_socorro",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CARANDIRU",
+  "slug": "carandiru",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CARRÃO",
+  "slug": "carrao",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CASA VERDE",
+  "slug": "casa_verde",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CATUMBI",
+  "slug": "catumbi",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CAXINGUI",
+  "slug": "caxingui",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CEASA",
+  "slug": "ceasa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CENTRO",
+  "slug": "centro",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CERQUEIRA CÉSAR",
+  "slug": "cerqueira_cesar",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CHÁCARA FLORA",
+  "slug": "chacara_flora",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CHÁCARA MONTE ALEGRE",
+  "slug": "chacara_monte_alegre",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CHÁCARA SANTO ANTÔNIO",
+  "slug": "chacara_santo_antônio",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE ADEMAR",
+  "slug": "cidade_ademar",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE A. E. CARVALHO",
+  "slug": "cidade_a",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE DUTRA",
+  "slug": "cidade_dutra",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE JARDIM",
+  "slug": "cidade_jardim",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CIDADE LÍDER",
+  "slug": "cidade_lider",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE PATRIARCA",
+  "slug": "cidade_patriarca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CIDADE TIRADENTES",
+  "slug": "cidade_tiradentes",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "CIDADE UNIVERSITÁRIA",
+  "slug": "cidade_universitaria",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CONSOLAÇÃO",
+  "slug": "consolacao",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "CURSINO",
+  "slug": "cursino",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ERMELINO MATARAZZO",
+  "slug": "ermelino_matarazzo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ENGENHO GOULART",
+  "slug": "engenho_goulart",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "FREGUESIA DO Ó",
+  "slug": "freguesia_do_o",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "GRAJAÚ",
+  "slug": "grajau",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "GRANJA JULIETA",
+  "slug": "granja_julieta",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "GUAIANAZES",
+  "slug": "guaianazes",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "GUARAPIRANGA",
+  "slug": "guarapiranga",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "HIGIENÓPOLIS",
+  "slug": "higienopolis",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "IMIRIM",
+  "slug": "imirim",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "IGUAÇU",
+  "slug": "iguacu",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "IGUATEMI",
+  "slug": "iguatemi",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "INDIANÓPOLIS",
+  "slug": "indianopolis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "INTERLAGOS",
+  "slug": "interlagos",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "IPIRANGA",
+  "slug": "ipiranga",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ITABERABA",
+  "slug": "itaberaba",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ITAIM BIBI",
+  "slug": "itaim_bibi",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "ITAIM PAULISTA",
+  "slug": "itaim_paulista",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "ITAQUERA",
+  "slug": "itaquera",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JABAQUARA",
+  "slug": "jabaquara",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JAÇANÃ",
+  "slug": "jacana",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JAGUARA",
+  "slug": "jaguara",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JAGUARÉ",
+  "slug": "jaguare",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARAGUÁ",
+  "slug": "jaragua",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM AEROPORTO",
+  "slug": "jardim_aeroporto",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM AMÉRICA",
+  "slug": "jardim_america",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM ÂNGELA",
+  "slug": "jardim_angela",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM ANÁLIA FRANCO",
+  "slug": "jardim_analia_franco",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM BONFIGLIOLI",
+  "slug": "jardim_bonfiglioli",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM COLORADO",
+  "slug": "jardim_colorado",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM DA GLÓRIA",
+  "slug": "jardim_da_gloria",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM EUROPA",
+  "slug": "jardim_europa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM GLÓRIA",
+  "slug": "jardim_gloria",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM GUEDALA",
+  "slug": "jardim_guedala",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM HELENA",
+  "slug": "jardim_helena",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM JAPÃO",
+  "slug": "jardim_japao",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM LEONOR",
+  "slug": "jardim_leonor",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM MIRIAM",
+  "slug": "jardim_miriam",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM PAULISTA",
+  "slug": "jardim_paulista",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM PERI PERI",
+  "slug": "jardim_peri_peri",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM SÃO LUIS",
+  "slug": "jardim_sao_luis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JARDIM SÃO PAULO",
+  "slug": "jardim_sao_paulo",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDIM TREMEMBÉ",
+  "slug": "jardim_tremembe",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JARDINS",
+  "slug": "jardins",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "JOSÉ BONIFÁCIO",
+  "slug": "jose_bonifacio",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "JURUBATUBA",
+  "slug": "jurubatuba",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "LAJEADO",
+  "slug": "lajeado",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "LAPA",
+  "slug": "lapa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "LAUSANE PAULISTA",
+  "slug": "lausane_paulista",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "LIBERDADE",
+  "slug": "liberdade",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "LIMÃO",
+  "slug": "limao",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "LUZ",
+  "slug": "luz",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "MANDAQUI",
+  "slug": "mandaqui",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "MARSILAC",
+  "slug": "marsilac",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "MIRANDÓPOLIS",
+  "slug": "mirandopolis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "MOEMA",
+  "slug": "moema",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "MOOCA",
+  "slug": "mooca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "MORUMBI",
+  "slug": "morumbi",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "M-boi mirim",
+  "slug": "m-boi",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "NOSSA SENHORA DO Ó",
+  "slug": "nossa_senhora_do",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PACAEMBU",
+  "slug": "pacaembu",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARAÍSO",
+  "slug": "paraiso",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PARELHEIROS",
+  "slug": "parelheiros",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PARI",
+  "slug": "pari",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE DO CARMO",
+  "slug": "parque_do_carmo",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PARQUE EDU CHAVES",
+  "slug": "parque_edu_chaves",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE GRAJAÚ",
+  "slug": "parque_grajau",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PARQUE MOÓCA",
+  "slug": "parque_mooca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE NOVO MUNDO",
+  "slug": "parque_novo_mundo",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE PERUCHE",
+  "slug": "parque_peruche",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE SÃO DOMINGOS",
+  "slug": "parque_sao_domingos",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE SÃO JORGE",
+  "slug": "parque_sao_jorge",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PARQUE SÃO LUCAS",
+  "slug": "parque_sao_lucas",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PEDREIRA",
+  "slug": "pedreira",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PENHA",
+  "slug": "penha",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PERDIZES",
+  "slug": "perdizes",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PERUS",
+  "slug": "perus",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PINHEIROS",
+  "slug": "pinheiros",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PIQUERI",
+  "slug": "piqueri",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PIRAJUÇARA",
+  "slug": "pirajucara",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PIRITUBA",
+  "slug": "pirituba",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PLANALTO PAULISTA",
+  "slug": "planalto_paulista",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "PONTE PEQUENA",
+  "slug": "ponte_pequena",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "PONTE RASA",
+  "slug": "ponte_rasa",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "POMPÉIA",
+  "slug": "pompeia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "QUARTA PARADA",
+  "slug": "quarta_parada",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "RAPOSO TAVARES",
+  "slug": "raposo_tavares",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "REAL PARQUE",
+  "slug": "real_parque",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "REPÚBLICA",
+  "slug": "republica",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "RIO BONITO",
+  "slug": "rio_bonito",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "RIO PEQUENO",
+  "slug": "rio_pequeno",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SACOMÃ",
+  "slug": "sacoma",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SANTA CECÍLIA",
+  "slug": "santa_cecilia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SANTA EFIGÊNIA",
+  "slug": "santa_efigenia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SANTA TERESINHA",
+  "slug": "santa_teresinha",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SANTANA",
+  "slug": "santana",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SANTO AMARO",
+  "slug": "santo_amaro",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SAPOPEMBA",
+  "slug": "sapopemba",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SAÚDE",
+  "slug": "saude",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SOCORRO",
+  "slug": "socorro",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO DOMINGOS",
+  "slug": "sao_domingos",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SÃO JOÃO CLÍMACO",
+  "slug": "sao_joao_climaco",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO LUCAS",
+  "slug": "sao_lucas",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO MATEUS",
+  "slug": "sao_mateus",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO MIGUEL",
+  "slug": "sao_miguel",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO MIGUEL PAULISTA",
+  "slug": "sao_miguel_paulista",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÃO RAFAEL",
+  "slug": "sao_rafael",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SAPOPEMBA",
+  "slug": "sapopemba",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SÉ",
+  "slug": "se",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SÍTIO MORRO GRANDE",
+  "slug": "sitio_morro_grande",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "SOCORRO",
+  "slug": "socorro",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "SUMARÉ",
+  "slug": "sumare",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "TATUAPÉ",
+  "slug": "tatuape",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "TREMEMBÉ",
+  "slug": "tremembe",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "TUCURUVI",
+  "slug": "tucuruvi",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VELEIROS",
+  "slug": "veleiros",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA ALPINA",
+  "slug": "vila_alpina",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA ANDRADE",
+  "slug": "vila_andrade",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA ANASTÁCIA",
+  "slug": "vila_anastacia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA BUARQUE",
+  "slug": "vila_buarque",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA CARIOCA",
+  "slug": "vila_carioca",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA CARRÃO",
+  "slug": "vila_carrao",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA CLEMENTINO",
+  "slug": "vila_clementino",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA CURUÇÁ",
+  "slug": "vila_curuca",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA DAS BELEZAS",
+  "slug": "vila_das_belezas",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA EDI",
+  "slug": "vila_edi",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA EMA",
+  "slug": "vila_ema",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA ESPERANÇA",
+  "slug": "vila_esperanca",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA FORMOSA",
+  "slug": "vila_formosa",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA GARANI",
+  "slug": "vila_garani",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA GOMES CARDIM",
+  "slug": "vila_gomes_cardim",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA GUILHERME",
+  "slug": "vila_guilherme",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA HAMBURGUESA",
+  "slug": "vila_hamburguesa",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA JACUÍ",
+  "slug": "vila_jacui",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA JAGUARA",
+  "slug": "vila_jaguara",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA LEOPOLDINA",
+  "slug": "vila_leopoldina",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA LIVEIRO",
+  "slug": "vila_liveiro",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA MADALENA",
+  "slug": "vila_madalena",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MEDEIROS",
+  "slug": "vila_medeiros",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MARIA",
+  "slug": "vila_maria",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MARIANA",
+  "slug": "vila_mariana",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA MASCOTE",
+  "slug": "vila_mascote",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MATILDE",
+  "slug": "vila_matilde",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MEDEIROS",
+  "slug": "vila_medeiros",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA MERCÊS",
+  "slug": "vila_merces",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA MOINHO VELHO",
+  "slug": "vila_moinho_velho",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA MONUMENTO",
+  "slug": "vila_monumento",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA NOVA CACHOEIRINHA",
+  "slug": "vila_nova_cachoeirinha",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA NOVA CONCEIÇÃO",
+  "slug": "vila_nova_conceicao_loga",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA NOVA CONCEIÇÃO",
+  "slug": "vila_nova_conceicao_ecourbis",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA PARANAGUÁ",
+  "slug": "vila_paranagua",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA PRUDENTE",
+  "slug": "vila_prudente",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA RÉ",
+  "slug": "vila_re",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA REMÉDIOS",
+  "slug": "vila_remedios",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA ROMANA",
+  "slug": "vila_romana",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA SANTA CATARINA",
+  "slug": "vila_santa_catarina",
+  "empresa": "Ecourbis"
+ },
+ {
+  "bairro": "VILA SÔNIA",
+  "slug": "vila_sônia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA OLÍMPIA",
+  "slug": "vila_olimpia",
+  "empresa": "Loga"
+ },
+ {
+  "bairro": "VILA ZELINA",
+  "slug": "vila_zelina",
+  "empresa": "Ecourbis"
+ }
+]

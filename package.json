@@ -1,0 +1,21 @@
+{
+  "name": "reciclai",
+  "private": true,
+  "type": "module",
+  "description": "Consulta de coleta de lixo por CEP em São Paulo. Varredura offline (Node) + site estático.",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "teste-vivo": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/teste-vivo.ts",
+    "varredura": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/varredura.ts",
+    "gerar-dados": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/gerar-dados.ts",
+    "validar": "tsx coleta/validar.ts",
+    "checar-fontes": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/checar-fontes.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

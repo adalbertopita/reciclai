@@ -1,0 +1,5 @@
+node_modules/
+coleta/progresso.json
+coleta/bruto/
+.DS_Store
+coleta/amostra/
