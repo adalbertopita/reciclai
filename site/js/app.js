@@ -255,7 +255,14 @@
     texto: 'Confira os números na conta de luz ou de água.',
   }
 
-  function telaResultado(d, via, arq, opcoes, m) {
+  /**
+   * extra (opcional): { numero, incerto, perguntar }
+   *   numero: número da casa informado (as opções já vêm filtradas pela empresa do número)
+   *   incerto: o número caiu entre faixas de empresas diferentes; mostra todas as opções
+   *   perguntar: CEP com faixas de número; oferece "informar o número"
+   */
+  function telaResultado(d, via, arq, opcoes, m, extra) {
+    extra = extra || {}
     var setores = opcoes.map(function (o) {
       return arq.setores[o.setor]
     })
@@ -264,6 +271,11 @@
       if (empresas.indexOf(s.empresa) < 0) empresas.push(s.empresa)
     })
     var html = '<div class="conteudo">' + blocoEndereco(d, via, true)
+    if (extra.numero && !extra.incerto) {
+      html +=
+        '<p class="numero-info">Número ' + esc(extra.numero) +
+        ' <button type="button" class="link" id="trocar-numero">trocar número</button></p>'
+    }
 
     if (opcoes.length === 1) {
       var s = setores[0]
@@ -302,15 +314,25 @@
         return nome + ': trecho ' + contagem[c]
       })
       var umaEmpresa = empresas.length === 1
+      var pedeNumero =
+        extra.perguntar && !umaEmpresa
+          ? ' <button type="button" class="link" id="trocar-numero">' +
+            (extra.incerto ? 'Tentar outro número' : 'Informar o número da casa') + '</button>'
+          : ''
+      var antes = extra.incerto
+        ? 'Pelo número ' + esc(extra.numero) + ', não deu para saber qual empresa atende. '
+        : ''
       html +=
         '<div class="aviso"><span class="circulo circulo--creme">' + icone('info', 22) + '</span>' +
         '<div class="aviso__corpo"><h2 class="aviso__titulo">' +
         (repete ? 'Depende do trecho da rua' : 'Qual é a sua rua?') +
         '</h2><p class="texto">' +
+        antes +
         (repete
           ? 'O caminhão passa em dias diferentes conforme o trecho da rua. Veja as opções abaixo. Se ficar em dúvida, confira no site da ' +
             (umaEmpresa ? empresas[0] : 'empresa') + '.'
           : 'Este CEP vale para mais de uma rua, e cada uma tem o seu horário. Procure a sua abaixo.') +
+        pedeNumero +
         '</p></div></div>'
       opcoes.forEach(function (o, i) {
         var s = setores[i]
@@ -337,6 +359,86 @@
     }
     html += '</div>' + rodapeDados(m) + '</div>'
     mostra(html, 'Reciclaí – dias da coleta do CEP ' + formataCep(d), true)
+    var trocar = document.getElementById('trocar-numero')
+    if (trocar) {
+      trocar.addEventListener('click', function () {
+        telaNumero(d, via, arq, arq.ceps[d], m, extra.numero)
+      })
+    }
+  }
+
+  // ---------- CEP com as duas empresas: pergunta o número ----------
+
+  /** Mesma regra de coleta/faixas-numero.ts (empresaDoNumero). null = não dá para saber (fora das faixas do CNEFE). */
+  function empresaDoNumero(f, n) {
+    var lado = (n % 2 === 0 ? f.p : f.i) || []
+    for (var k = 0; k < lado.length; k++) {
+      var fx = lado[k]
+      if (n < fx[0]) return null
+      if (n <= fx[1]) return fx[2]
+      var prox = lado[k + 1]
+      if (prox && n < prox[0]) return prox[2] === fx[2] ? fx[2] : null
+    }
+    return null
+  }
+
+  function telaNumero(d, via, arq, opcoes, m, valor) {
+    var html =
+      '<div class="conteudo conteudo--home">' + blocoEndereco(d, via, true) +
+      '<div class="aviso"><span class="circulo circulo--creme">' + icone('info', 22) + '</span>' +
+      '<div class="aviso__corpo"><h2 class="aviso__titulo">Qual é o número da sua casa?</h2>' +
+      '<p class="texto">Na sua rua, a coleta é feita pela Loga num trecho e pela Ecourbis no outro. ' +
+      'Com o número, mostramos o horário certo.</p></div></div>' +
+      '<form class="form" id="form-numero" novalidate>' +
+      '<label for="numero" class="sr-only">Número da casa</label>' +
+      '<div class="form__linha">' +
+      '<input class="input" id="numero" type="text" inputmode="numeric" autocomplete="off" placeholder="Ex.: 230" maxlength="6" aria-describedby="numero-ajuda">' +
+      '<div id="numero-erro" hidden></div>' +
+      '<p class="ajuda" id="numero-ajuda">Só o número, sem apartamento ou bloco. Ele não é guardado.</p>' +
+      '<button class="btn" type="submit">ver dias da coleta</button>' +
+      '</div></form>' +
+      '<button type="button" class="btn btn--outline" id="sem-numero">não sei o número</button>' +
+      '</div>'
+    mostra(html, 'Reciclaí – número da casa, CEP ' + formataCep(d), true)
+
+    var campo = document.getElementById('numero')
+    if (valor) campo.value = valor
+    campo.addEventListener('input', function () {
+      var v = soDigitos(campo.value).slice(0, 6)
+      if (campo.value !== v) campo.value = v
+      if (campo.getAttribute('aria-invalid') === 'true') {
+        campo.removeAttribute('aria-invalid')
+        campo.setAttribute('aria-describedby', 'numero-ajuda')
+        document.getElementById('numero-erro').hidden = true
+      }
+    })
+    document.getElementById('sem-numero').addEventListener('click', function () {
+      telaResultado(d, via, arq, opcoes, m, { perguntar: true })
+    })
+    document.getElementById('form-numero').addEventListener('submit', function (e) {
+      e.preventDefault()
+      var n = parseInt(soDigitos(campo.value), 10)
+      if (!(n > 0)) {
+        var caixa = document.getElementById('numero-erro')
+        campo.setAttribute('aria-invalid', 'true')
+        campo.setAttribute('aria-describedby', 'numero-erro numero-ajuda')
+        caixa.className = 'erro'
+        caixa.setAttribute('role', 'alert')
+        caixa.innerHTML =
+          icone('alerta', 22) +
+          '<div><p class="erro__titulo">Digite o número da casa.</p>' +
+          '<p class="erro__texto">Se não souber, toque em “não sei o número”.</p></div>'
+        caixa.hidden = false
+        campo.focus()
+        return
+      }
+      var emp = empresaDoNumero(arq.numeros[d], n)
+      if (!emp) return telaResultado(d, via, arq, opcoes, m, { numero: n, incerto: true, perguntar: true })
+      var filtradas = opcoes.filter(function (o) {
+        return arq.setores[o.setor].empresa === emp
+      })
+      telaResultado(d, via, arq, filtradas.length ? filtradas : opcoes, m, { numero: n, perguntar: true })
+    })
   }
 
   function telaSemHorario(d, via, empresas, motivo) {
@@ -479,7 +581,10 @@
         var arq = r[0]
         var via = r[1]
         var opcoes = arq && arq.ceps[d]
-        if (opcoes && opcoes.length) return telaResultado(d, via, arq, opcoes, r[2])
+        if (opcoes && opcoes.length) {
+          if (arq.numeros && arq.numeros[d]) return telaNumero(d, via, arq, opcoes, r[2])
+          return telaResultado(d, via, arq, opcoes, r[2])
+        }
         if (via && via.erro) return telaHome(Object.assign({ valor: formataCep(d) }, ERRO_INEXISTENTE))
         return bairros().then(function (lista) {
           if (vale()) telaSemHorario(d, via, empresasProvaveis(via, arq, lista), 'sem-dado')

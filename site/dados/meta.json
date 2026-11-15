@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-11-12",
+  "atualizadoEm": "2026-11-15",
   "mesAno": "11/2026",
   "areas": [
     "cidade-grossa",
@@ -22,6 +22,7 @@
     },
     "cepsNasDuasEmpresas": 289,
     "setores": 23668,
+    "cepsComFaixas": 111,
     "prefixos": 3168,
     "bairros": 211
   }

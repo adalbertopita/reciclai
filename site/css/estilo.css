@@ -474,6 +474,29 @@ hr {
   font-weight: 700;
 }
 
+/* ---------- número da casa ---------- */
+.link {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.625rem 0;
+  border: 0;
+  background: none;
+  color: var(--verde-escuro);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--verde-hover);
+}
+.numero-info {
+  margin-top: -0.5rem;
+  font-size: 1rem;
+  color: var(--texto-2);
+}
+
 /* ---------- passos ---------- */
 .passos {
   padding: 0;

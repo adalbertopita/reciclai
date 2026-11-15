@@ -63,6 +63,14 @@ function lerBase(dirDados: string) {
       }
       ceps.set(cep, info)
     }
+    for (const [cep, f] of Object.entries(arq.numeros ?? {})) {
+      const info = ceps.get(cep)
+      if (!info) erros.push(`${nome}: faixas de número para CEP ausente ${cep}`)
+      else if (info.empresas.size < 2) erros.push(`${nome}: faixas de número em CEP de uma empresa só ${cep}`)
+      for (const lado of [f.p, f.i])
+        for (const [ini, fim, e] of lado)
+          if (!(ini <= fim) || !info?.empresas.has(e)) erros.push(`${nome}: faixa inválida em ${cep}: ${ini}-${fim} ${e}`)
+    }
   }
   return { ceps, erros }
 }

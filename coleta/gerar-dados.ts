@@ -5,6 +5,7 @@
  *   npm run gerar-dados -- --area=amostra-loga,amostra-ecourbis --saida=coleta/amostra
  *
  * Lê coleta/bruto/<area>.jsonl e coleta/bruto/reciclasampa.html (baixa a página se não existir).
+ * Se existir coleta/bruto/faixas.json (npm run faixas), junta as faixas de número aos CEPs com as duas empresas.
  * Escreve: <saida>/cep/<prefixo>.json, <saida>/bairros.json, <saida>/meta.json.
  */
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
@@ -16,6 +17,7 @@ import { parseReciclaSampa, URL_PAGINA } from './fontes/reciclasampa.ts'
 import { URL_OFICIAL as LOGA_OFICIAL } from './fontes/loga.ts'
 import { URL_OFICIAL as ECOURBIS_OFICIAL } from './fontes/ecourbis.ts'
 import type { Empresa, Trecho } from './tipos.ts'
+import type { FaixasCep } from './faixas-numero.ts'
 
 const DIR = dirname(fileURLToPath(import.meta.url))
 const RAIZ = resolve(DIR, '..')
@@ -65,6 +67,24 @@ async function main() {
     })(),
   )
 
+  // Faixas de número (CEPs com as duas empresas)
+  const arqFaixas = join(BRUTO, 'faixas.json')
+  let comFaixas = 0
+  if (existsSync(arqFaixas)) {
+    const faixas = JSON.parse(readFileSync(arqFaixas, 'utf8')) as Record<string, FaixasCep>
+    for (const [cep, f] of Object.entries(faixas)) {
+      const arq = porPrefixo.get(cep.slice(0, 5))
+      const opcoes = arq?.ceps[cep]
+      if (!arq || !opcoes) continue
+      if (new Set(opcoes.map((o) => arq.setores[o.setor]!.empresa)).size < 2) continue
+      if (f.p.length + f.i.length === 0) continue
+      // Mesmo quando todos os números do CNEFE dão uma empresa só, a outra opção fica: o CNEFE pode não ter
+      // os endereços do trecho dela (Rua Graúna, 04514000). Fora das faixas, o site mostra as duas.
+      ;(arq.numeros ??= {})[cep] = { p: f.p, i: f.i }
+      comFaixas++
+    }
+  }
+
   // Escreve
   rmSync(join(saida, 'cep'), { recursive: true, force: true })
   mkdirSync(join(saida, 'cep'), { recursive: true })
@@ -83,7 +103,7 @@ async function main() {
     mesAno: `${String(agora.getMonth() + 1).padStart(2, '0')}/${agora.getFullYear()}`,
     areas,
     links: { Loga: LOGA_OFICIAL, Ecourbis: ECOURBIS_OFICIAL },
-    totais: { ...totais, prefixos: porPrefixo.size, bairros: Object.keys(bairros).length },
+    totais: { ...totais, cepsComFaixas: comFaixas, prefixos: porPrefixo.size, bairros: Object.keys(bairros).length },
   }
   writeFileSync(join(saida, 'meta.json'), JSON.stringify(meta, null, 2))
 

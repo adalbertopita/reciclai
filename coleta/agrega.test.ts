@@ -11,7 +11,13 @@ const trecho = (p: Partial<Trecho> & { id: string; cep: string }): Trecho => ({
 
 describe('nomeExibicao', () => {
   it.each([
-    ['Rua PROF OTAVIO MENDES', 'Rua Prof Otavio Mendes'],
+    ['Rua PROF OTAVIO MENDES', 'Rua Professor Otavio Mendes'],
+    ['Rua S SEVERO', 'Rua São Severo'],
+    ['Viaduto ENG ALBERTO BADRA', 'Viaduto Engenheiro Alberto Badra'],
+    ['Avenida D PEDRO I', 'Avenida Dom Pedro I'],
+    ['Rua DES. DALMO DO VALLE NOGUEIRA', 'Rua Desembargador Dalmo do Valle Nogueira'],
+    ['Rua D', 'Rua D'],
+    ['Rua MAR VERMELHO', 'Rua Mar Vermelho'],
     ['Rua PLINIO FIGUEIREDO', 'Rua Plinio Figueiredo'],
     ['Praça DAS GUIANAS', 'Praça das Guianas'],
     ['Avenida Padre José Maria', 'Avenida Padre José Maria'],

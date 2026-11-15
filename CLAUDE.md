@@ -253,6 +253,24 @@ caffeinate -i -s -m sh -c 'npm run -s varredura -- --area=cidade --raio=2000 --n
   - alvos de toque ≥ 44 px.
 - ⚠️ **Servir localmente:** o preview do app desktop não lê o disco externo (permissão do macOS). Suba o servidor pelo terminal (`cd site && python3 -m http.server 8080`). O `.claude/launch.json` só aponta para `http://localhost:8080`.
 
+## Número da casa nos CEPs com as duas empresas (14/11/2026)
+
+- Problema: CEP na divisa (ex.: `04103030`, Av. Armando Ferrentini) tem trecho da Loga e trecho da Ecourbis. Nenhuma API dá faixa de número.
+- `npm run faixas` (`coleta/faixas.ts` + `coleta/faixas-numero.ts`):
+  - Alvos: CEPs do `site/dados` com as duas empresas e a **mesma rua** (sem acento). Ruas diferentes já caem em "Qual é a sua rua?".
+  - Números e coordenadas do CNEFE (só `NV_GEO_COORD = 1`), da rua com mais números no CEP.
+  - Empresa de um número = consulta à Loga na coordenada dele (`distance=30`): `naoAtendido` → Ecourbis; `found` true **ou false** → Loga.
+  - Busca binária por lado (par/ímpar), supondo uma troca por lado. Pontas iguais: confere meio e quartis. Lado com ≤ 6 números: consulta todos.
+  - Cache em `coleta/bruto/faixas-cache.json`, saída em `coleta/bruto/faixas.json`. Rodar de novo continua.
+  - 1ª execução: 121 CEPs, ~1.300 consultas à Loga (ritmo de 1 a 2 s). 111 com faixas, 10 sem número no CNEFE.
+- `gerar-dados` junta as faixas como `numeros: { cep: { p: [[ini, fim, empresa]], i: [...] } }` no arquivo do prefixo. `validar` confere.
+- **Regra (TS e JS iguais, `empresaDoNumero`):** dentro de uma faixa → a empresa dela; vão entre faixas da mesma empresa → ela; **antes da 1ª, depois da última ou vão entre empresas diferentes → null** (o site mostra as duas opções).
+  - ⚠️ Não estender as pontas: Rua Graúna (`04514000`) tem no CNEFE só os pares 68–208, todos Ecourbis, mas a Loga atende o começo da rua (o `checar-fontes` pegou).
+  - Por isso, CEP em que todos os números deram uma empresa só **não** é filtrado: continua com as duas opções e a pergunta.
+- Site: CEP com `numeros` abre "Qual é o número da sua casa?" (+ "não sei o número"). Com o número, filtra as opções pela empresa e mostra "Número N · trocar número". O número não vai para a URL.
+- ⚠️ Títulos abreviados da Loga (`S`, `D`, `ENG`, `GOV`, `CNSO`, `DES`...) agora são expandidos em `nomeExibicao` (`expandeTitulo`, `agrega.ts`). Antes, "Rua S Severo" × "Rua São Severo" virava "Qual é a sua rua?" e ficava fora das faixas.
+- Ordem para refazer: `gerar-dados` → `faixas` → `gerar-dados` (as faixas leem os alvos do `site/dados`).
+
 ## Código da coleta (etapa 2)
 
 - `coleta/tipos.ts`: `Trecho`, `Coleta`, `FonteGeo` (interface comum: `url(ponto, raio)` + `parse(json)`), `BairroEmpresa`.
@@ -284,6 +302,7 @@ npm run typecheck
 npm run teste-vivo   # 1 requisição real por fonte (Loga e Ecourbis)
 npm run validar      # integridade + cobertura (CNEFE) + empresa (Recicla Sampa); relatório em coleta/bruto/validacao.json
 npm run checar-fontes  # 3 CEPs conhecidos ao vivo contra site/dados (rodar antes de publicar dados novos)
+npm run faixas       # faixas de número dos CEPs com as duas empresas (depois: gerar-dados de novo)
 
 # amostra (etapa 3)
 npm run varredura -- --area=amostra-loga --fontes=loga --raio=140 --nome=teste-loga-r140

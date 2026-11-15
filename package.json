@@ -10,7 +10,8 @@
     "varredura": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/varredura.ts",
     "gerar-dados": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/gerar-dados.ts",
     "validar": "tsx coleta/validar.ts",
-    "checar-fontes": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/checar-fontes.ts"
+    "checar-fontes": "NODE_EXTRA_CA_CERTS=coleta/certs/globalsign-alphassl-ca-2025.pem tsx coleta/checar-fontes.ts",
+    "faixas": "tsx coleta/faixas.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

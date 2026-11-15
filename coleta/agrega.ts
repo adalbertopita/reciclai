@@ -12,6 +12,7 @@
 import { createHash } from 'node:crypto'
 import { montaColeta, textoHorario, ehHora } from './normaliza.ts'
 import type { Coleta, Dia, Empresa, Trecho } from './tipos.ts'
+import type { FaixasCep } from './faixas-numero.ts'
 
 export interface SetorSaida {
   empresa: Empresa
@@ -26,13 +27,42 @@ export interface OpcaoCep {
 export interface ArquivoPrefixo {
   setores: Record<string, SetorSaida>
   ceps: Record<string, OpcaoCep[]>
+  /** Faixas de número da casa (lado par `p` e ímpar `i`) dos CEPs com as duas empresas. Ver faixas-numero.ts. */
+  numeros?: Record<string, FaixasCep>
 }
 
 const MINUSCULAS = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'a', 'o', 'em', 'na', 'no'])
 
-/** "Rua PROF OTAVIO MENDES" -> "Rua Prof Otavio Mendes". Nomes já em caixa mista ficam como estão. */
+/**
+ * Títulos abreviados da Loga (campo Titulo), por extenso como a Ecourbis escreve.
+ * Sem isso, "Rua S Severo" (Loga) e "Rua São Severo" (Ecourbis) parecem ruas diferentes.
+ * Só os de leitura certa; os ambíguos (MAR, MTE, BR, CD) ficam como estão.
+ */
+const TITULOS: Record<string, string> = {
+  ALF: 'Alferes', ALM: 'Almirante', ARQ: 'Arquiteto', BRG: 'Brigadeiro', CAP: 'Capitão', CB: 'Cabo',
+  CEL: 'Coronel', CNSO: 'Conselheiro', COMEN: 'Comendador', D: 'Dom', DEP: 'Deputado', DES: 'Desembargador',
+  DNA: 'Dona', DR: 'Doutor', DRA: 'Doutora', EMB: 'Embaixador', ENG: 'Engenheiro', FR: 'Frei', GEN: 'General',
+  GOV: 'Governador', MAJ: 'Major', MAL: 'Marechal', MIN: 'Ministro', MNS: 'Monsenhor', MTO: 'Maestro',
+  NSRA: 'Nossa Senhora', OUV: 'Ouvidor', PE: 'Padre', PRES: 'Presidente', PROF: 'Professor',
+  PROFA: 'Professora', S: 'São', SD: 'Soldado', SEN: 'Senador', SRG: 'Sargento', STA: 'Santa',
+  STO: 'Santo', TEN: 'Tenente', VER: 'Vereador', VSC: 'Visconde',
+}
+
+/** Expande o título logo depois do tipo da via: "Rua S SEVERO" -> "Rua São SEVERO". */
+export function expandeTitulo(s: string): string {
+  const p = s.split(/\s+/)
+  if (p.length < 3) return s
+  const t = TITULOS[p[1]!.replace(/\.$/, '').toUpperCase()]
+  if (!t) return s
+  p[1] = t
+  return p.join(' ')
+}
+
+/** "Rua PROF OTAVIO MENDES" -> "Rua Professor Otavio Mendes". Nomes já em caixa mista só têm o título expandido. */
 export function nomeExibicao(s: string): string {
-  if (s !== s.toUpperCase() && /[a-z]/.test(s.split(' ').slice(1).join(' '))) return s
+  const mista = s !== s.toUpperCase() && /[a-z]/.test(s.split(' ').slice(1).join(' '))
+  s = expandeTitulo(s)
+  if (mista) return s
   return s
     .toLowerCase()
     .split(/\s+/)

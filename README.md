@@ -21,6 +21,7 @@ site/          HTML + CSS + JS puro, sem build: lê os JSON direto no navegador
 - **Dados:** 44.637 CEPs da capital, com 93% dos domicílios cobertos, segundo o Censo 2022 do IBGE. Os horários são de 11/2026, e o site mostra essa data.
 - **Quando o CEP não está na base:** o site diz qual empresa atende, pelo bairro (via [ViaCEP](https://viacep.com.br)) e pela lista do [Recicla Sampa](https://www.reciclasampa.com.br/horarios-de-coleta), e leva ao site oficial dela, com o passo a passo.
 - **Quando o horário muda conforme o trecho da rua:** o site mostra as opções e avisa, em vez de escolher uma.
+- **Quando a rua tem as duas empresas:** o site pergunta o número da casa. As faixas de número vêm dos endereços do Censo (CNEFE) cruzados com a área da Loga. Se o número cair fora do que dá para saber, mostra as duas opções.
 - **Privacidade:** sem login, cookies, analytics ou `localStorage`. O CEP só vai na URL (`?cep=`) e na consulta ao ViaCEP.
 - **Leve:** ~95 KB na primeira visita e ~0,5 KB por consulta.
 
@@ -45,6 +46,7 @@ npm run checar-fontes  # 3 CEPs conhecidos ao vivo contra site/dados: as fontes 
 A varredura completa leva cerca de 2h30, em ritmo educado (1 a 2 s entre requisições, uma por vez). O passo a passo, com retomada após queda e a correção do certificado da Ecourbis, está no [CLAUDE.md](CLAUDE.md#rodar-a-varredura-da-cidade-passo-a-passo). Ao final:
 
 ```bash
+npm run faixas         # faixas de número das ruas com as duas empresas; depois rode o gerar-dados de novo
 npm run validar        # integridade + cobertura contra o CNEFE (IBGE) + empresa contra o Recicla Sampa
 ```
 
